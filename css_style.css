@@ -1,0 +1,102 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #82e0aa;
+}
+
+header {
+    background:#717d7e;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+section {
+    padding: 20px;
+}
+
+.package, .facility {
+    border: 1px solid #ccc;
+    margin: 10px 0;
+    padding: 10px;
+}
+
+.button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.button:hover {
+    background-color: #45a049;
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background: #717d7e;
+    color: white;
+}
+.img {
+    width: 100%;
+    height: 40%;
+    margin: 0;
+}
+#videoContainer {
+    background-color: rgba(0, 0, 0, 0.8); /* خلفية داكنة */
+    padding: 20px;
+    border-radius: 10px;
+}
+h2{
+    text-align: center;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.gallery img {
+    width: 30%; /* عرض الصورة 30% */
+    margin-bottom: 10px; /* مسافة بين الصور */
+    border-radius: 8px; /* زوايا دائرية */
+}
+
+/* تنسيق قسم الصور */
+#imageGallery {
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
+   gap: 20px;
+   margin-top: 20px;
+}
+#imageGallery img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.log{
+    width: 10%;
+    height: 10%;
+    border-radius: 5px;
+}
+
