@@ -1,50 +1,55 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>منتجع هول ان ون</title>
-    <link rel="stylesheet" href="css_style.css">
+    <link rel="stylesheet" href="styles.css">
+    <title>هول إن ون - الصفحة الرئيسية</title>
 </head>
 <body>
     <header>
-        <h1>منتجع هول ان ون</h1>
-        <img class="log" src="log.jpg">
+        <h1>هول إن ون - منتجع الجولف في البرتغال</h1>
+        <img class="log" src="شعار.jpg" alt="شعار">
+
         <nav>
             <ul>
-                <li><a href="index.html">الرئيسية</a></li>
-                <li><a href="صفحة المرافق و الخدمات.html">المرافق والخدمات</a></li>
-                <li><a href="صفحة الحزم.html">الحزم</a></li>
-                <li><a href="اتصل بنا.html">اتصل بنا</a></li>
-                
-                <li><a href="#" id="playVideo">شاهد الفيديو</a></li> <!-- رابط تشغيل الفيديو -->
+                <li><a href="facilities.html">المرافق</a></li>
+                <li><a href="packages.html">الحزم</a></li>
+                <li><a href="about.html">من نحن</a></li>
+                <li><a href="contact.html">اتصل بنا</a></li>
             </ul>
         </nav>
     </header>
-
     <main>
-        <h2>مرحبًا بكم في منتجع هول ان ون</h2>
-        <p>
-            من إدارة منتجع "هول إن ون" نرحب بكم في وجهتنا المميزة لعشاق الجولف والرفاهية في قلب البرتغال. نفخر بتقديم تجربة رياضية وترفيهية فريدة تتجسد في ثلاثة ملاعب للجولف ذات معايير عالمية، منها ملعب "سي فيو" الشهير، بالإضافة إلى ناديين راقين وفنادق توفر إقامة فاخرة. 
-            <strong>استمتع بتجربة لا تُنسى تجمع بين رياضة الجولف والرفاهية الراقية.</strong>
-        </p>
-        <img src="golf-83876_1280.jpg" alt="منتجع هول ان ون" style="width: 100%;">
-        <img src="home_02.jpg" alt="تجربة الجولف" style="width: 100%; margin-top: 20px;">
+        <button id="showVideoButton">مشاهدة الفيديو</button><br>
+        <!-- قسم الفيديو -->
+        <section class="video-section" id="videoSection" style="display: none;">
+            <h2>شاهد الفيديو الخاص بنا</h2>
+            <video width="560" height="315" controls autoplay>
+                <source src="small.mp4" type="video/mp4">
+                متصفحك لا يدعم تشغيل الفيديو.
+            </video>
+            <p>استمتع بمشاهدة الفيديو للتعرف على مرافقنا وخدماتنا.</p>
+        </section>
+
+        <div class="image-gallery">
+            <img src="home_01.jpg" alt="ملعب جولف">
+            <img src="home_02.jpg" alt="الإقامة">
+        </div>
+
+        <!-- نموذج الاتصال -->
+        <form id="contactForm">
+            <input type="text" id="name" placeholder="اسمك" required>
+            <input type="email" id="email" placeholder="بريدك الإلكتروني" required>
+            <input type="text" id="phone" placeholder="رقم هاتفك" required>
+            <textarea id="message" placeholder="رسالتك" required></textarea>
+            <button type="submit">إرسال</button>
+        </form>
     </main>
-
-    <div id="videoContainer" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1000;">
-        <video id="videoPlayer" width="600" controls>
-            <source src="45301-442657794_small.mp4" type="video/mp4">
-            <track kind="subtitles" src="subtitles.vtt" srclang="ar" label="العربية">
-            متصفحك لا يدعم تشغيل الفيديو.
-        </video>
-        <button id="closeVideo">إغلاق</button>
-    </div>
-
     <footer>
-        <p>&copy; 2025 منتجع هول ان ون. جميع الحقوق محفوظة.</p>
+        <p>© 2025 هول إن ون. جميع الحقوق محفوظة.</p>
+        <p>رقم الهاتف: [0077-56-978778] | البريد الإلكتروني: [info@hole-in-one.com]</p>
     </footer>
-
-    <script src="script.js"></script> <!-- ربط ملف JavaScript -->
+    <script src="script.js"></script>
 </body>
 </html>

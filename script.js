@@ -1,117 +1,93 @@
-// وظيفة للاشتراك في النشرة الإخبارية
-document.querySelectorAll('.button').forEach(button => {
-    button.addEventListener('click', function(event) {
-        if (this.textContent === 'اشترك الآن' || this.textContent.includes('احجز الآن')) {
-            event.preventDefault(); // منع الانتقال الفوري
-            window.location.href = 'المعلومات الشخصية.html'; // الانتقال إلى صفحة الحجز
-        }
-    });
-});
-
-// وظيفة لإرسال نموذج الحجز
-if (document.getElementById('bookingForm')) {
-    document.getElementById('bookingForm').addEventListener('submit', function(event) {
-        event.preventDefault(); // منع إعادة تحميل الصفحة
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const phone = document.getElementById('phone').value;
-
-        alert(`شكرًا لك، ${name}! تم تأكيد حجزك بنجاح.`);
-        this.reset();
-    });
+// دالة للاشتراك في خدمة معينة
+function subscribe(facility) {
+    // عرض رسالة تأكيد الاشتراك
+    alert("تم الاشتراك بنجاح في خدمة: " + facility);
 }
 
-// وظيفة لإرسال نموذج الاتصال
-if (document.getElementById('contactForm')) {
-    document.getElementById('contactForm').addEventListener('submit', function(event) {
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    // تعديل دالة إرسال نموذج الاتصال
+    document.getElementById("contactForm").addEventListener("submit", function(event) {
         event.preventDefault(); // منع إعادة تحميل الصفحة
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const message = document.getElementById('message').value;
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const phone = document.getElementById("phone").value;
+        const message = document.getElementById("message").value;
 
-        alert(`شكرًا لك، ${name}! تم إرسال رسالتك بنجاح.`);
-        this.reset();
+        // عرض رسالة شكر
+        alert(`شكرًا لك، ${name}! سنقوم بالرد على رسالتك قريبًا.`);
+        this.reset(); // إعادة تعيين النموذج
     });
-}
 
-// وظيفة لعرض تفاصيل الحزمة المختارة
-document.getElementById('packageSelect')?.addEventListener('change', function() {
-    const selectedPackage = this.value;
-    const packageDetails = document.getElementById('packageDetails');
-    const bookButton = document.getElementById('bookButton');
-
-    let details = '';
-
-    switch (selectedPackage) {
-        case 'fiveRounds':
-            details = `
-                <h3>خمس جولات</h3>
-                <ul>
-                    <li>إقامة كاملة لمدة خمس ليال في جناح فاخر.</li>
-                    <li>خمس جولات -18 حفرة.</li>
-                    <li>جولة واحدة مضمونة في ملعب "سي فيو" الشهير.</li>
-                    <li>جلسة تدريب رقمية مجانية.</li>
-                </ul>
-            `;
-            bookButton.style.display = 'block'; // إظهار زر الحجز
-            break;
-        case 'tripleRound':
-            details = `
-                <h3>الجولة الثلاثية</h3>
-                <ul>
-                    <li>إقامة لمدة ليلتين في غرفة مزدوجة مع وجبة الإفطار.</li>
-                    <li>ثلاث جولات -18 حفرة، تشمل خوض جولة واحدة في ملعب "سي فيو" الشهير (إن وجدت).</li>
-                    <li>تأجير مجاني للعربات.</li>
-                    <li>خصم 2% لمتجر المحترفين.</li>
-                </ul>
-            `;
-            bookButton.style.display = 'block'; // إظهار زر الحجز
-            break;
-        case 'recreationBreak':
-            details = `
-                <h3>استراحة استجمام</h3>
-                <ul>
-                    <li>إقامة لليلة واحدة مع وجبة إفطار كاملة.</li>
-                    <li>تناول العشاء في أي من مطاعم المنتجع.</li>
-                    <li>الوصول إلى الملاعب (تطبق الرسوم ويستبعد ملعب "سي فيو").</li>
-                    <li>تأجير نادي مجاني.</li>
-                </ul>
-            `;
-            bookButton.style.display = 'block'; // إظهار زر الحجز
-            break;
-        case 'customPackage':
-            alert("لترتيب الحزم المخصصة، يرجى الاتصال بنا.");
-            window.location.href = 'اتصل بنا.html'; // الانتقال إلى صفحة الاتصال
-            return; // إنهاء الوظيفة هنا
-        default:
-            details = ''; // إذا لم يتم اختيار أي حزمة
-            bookButton.style.display = 'none'; // إخفاء زر الحجز
+    // إضافة حدث لزر مشاهدة الفيديو
+    const showVideoButton = document.getElementById('showVideoButton');
+    if (showVideoButton) {
+        showVideoButton.addEventListener('click', function() {
+            document.getElementById('videoSection').style.display = 'block'; // إظهار قسم الفيديو
+            this.style.display = 'none'; // إخفاء زر مشاهدة الفيديو
+        });
     }
-
-    packageDetails.innerHTML = details; // عرض التفاصيل
 });
 
-// وظيفة للاشتراك في الخدمة المختارة
-if (document.getElementById('serviceSelect')) {
-    document.getElementById('subscribeServiceButton').addEventListener('click', function() {
-        const selectedService = document.getElementById('serviceSelect').value;
 
-        if (selectedService) {
-            alert(`تم الاشتراك في الخدمة: ${selectedService}`);
-        } else {
-            alert("يرجى اختيار خدمة للاشتراك.");
-        }
-    });
+function showPackageDetails() {
+    const packageSelect = document.getElementById("packageSelect");
+    const detailsText = document.getElementById("detailsText");
+    const packageDetails = document.getElementById("packageDetails");
+    const bookButton = document.getElementById("bookButton");
+
+    switch (packageSelect.value) {
+        case "خمس جولات":
+            detailsText.innerHTML = `
+                <strong>تفاصيل الحزمة:</strong><br>
+                - إقامة كاملة لمدة خمس ليال في جناح فاخر.<br>
+                - خمس جولات - 18 حفرة.<br>
+                - جولة واحدة مضمونة في ملعب "سي فيو" الشهير.<br>
+                - جلسة تدريب رقمية مجانية.
+            `;
+            bookButton.style.display = "block";
+            packageDetails.style.display = "block";
+            break;
+        case "الجولة الثلاثية":
+            detailsText.innerHTML = `
+                <strong>تفاصيل الحزمة:</strong><br>
+                - إقامة لمدة ليلتين في غرفة مزدوجة مع وجبة الإفطار.<br>
+                - ثلاث جولات - 18 حفرة، تشمل خوض جولة واحدة في ملعب "سي فيو" الشهير (إن وجدت).<br>
+                - تأجير مجاني للعربات.<br>
+                - خصم 2% لمتجر المحترفين.
+            `;
+            bookButton.style.display = "block";
+            packageDetails.style.display = "block";
+            break;
+        case "استراحة استجمام":
+            detailsText.innerHTML = `
+                <strong>تفاصيل الحزمة:</strong><br>
+                - إقامة لليلة واحدة مع وجبة إفطار كاملة.<br>
+                - تناول العشاء في أي من مطاعم المنتجع.<br>
+                - الوصول إلى الملاعب (تطبق الرسوم ويستبعد ملعب "سي فيو").<br>
+                - تأجير نادي مجاني.
+            `;
+            bookButton.style.display = "block";
+            packageDetails.style.display = "block";
+            break;
+        case "الحزم المخصصة":
+            detailsText.innerHTML = `
+                <strong>تفاصيل الحزمة:</strong><br>
+                - تتوفر الحزم المخصصة للفعاليات المؤسسية والإقامات الطويلة.<br>
+                - يجب على العملاء الاتصال بالشركة لترتيب أي حزم مخصصة.
+            `;
+            bookButton.style.display = "none"; // لا حاجة لزر الحجز هنا
+            packageDetails.style.display = "block";
+            break;
+        default:
+            detailsText.innerHTML = "";
+            bookButton.style.display = "none";
+            packageDetails.style.display = "none";
+            break;
+    }
 }
-document.getElementById('playVideo').addEventListener('click', function(event) {
-    event.preventDefault(); // منع الانتقال الفوري
-    document.getElementById('videoContainer').style.display = 'block'; // إظهار الفيديو
-    document.getElementById('videoPlayer').play(); // تشغيل الفيديو
-});
 
-document.getElementById('closeVideo').addEventListener('click', function() {
-    document.getElementById('videoContainer').style.display = 'none'; // إخفاء الفيديو
-    document.getElementById('videoPlayer').pause(); // إيقاف الفيديو
-    document.getElementById('videoPlayer').currentTime = 0; // إعادة الفيديو إلى البداية
-});
-
+function bookPackage() {
+    alert("تم حجز الحزمة بنجاح!");
+}

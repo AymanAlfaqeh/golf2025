@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>هول إن ون - الحزم</title>
+</head>
+<body>
+    <header>
+        <h1>الحزم</h1>
+        <img class="log"  src="شعار.jpg" alt="شعار">
+        <nav>
+            <ul>
+                <li><a href="index.html">الصفحة الرئيسية</a></li>
+                <li><a href="facilities.html">المرافق</a></li>
+                <li><a href="about.html">من نحن</a></li>
+                <li><a href="contact.html">اتصل بنا</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>اختر حزمة</h2>
+            <select  class="sele" id="packageSelect" onchange="showPackageDetails()">
+                <option value="">اختر حزمة</option>
+                <option value="خمس جولات">خمس جولات</option>
+                <option value="الجولة الثلاثية">الجولة الثلاثية</option>
+                <option value="استراحة استجمام">استراحة استجمام</option>
+                <option value="الحزم المخصصة">الحزم المخصصة</option>
+            </select>
+            <div id="packageDetails" style="display:none;">
+                <h3>تفاصيل الحزمة</h3>
+                <p id="detailsText"></p>
+                <button id="bookButton" style="display:none;" onclick="bookPackage()">احجز الآن</button>
+            </div>
+        </section>
+
+        <section >
+            <h2>صور الحزم</h2>
+            <div class="image-gallery">
+                <img src="الحزمة_01.jpg" alt="حزمة 1">
+                <img src="الحزمة_02.jpg" alt="حزمة 2">
+
+            </div>
+        </section>
+        <section >
+            
+            <div class="image-gallery">
+                <img src="الحزمة_03.jpg" alt="حزمة 3">
+                <img src="الحزمة_04.jpg" alt="حزمة 4">
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>© 2025 هول إن ون. جميع الحقوق محفوظة.</p>
+        <p>رقم الهاتف: [0077-56-978778] | البريد الإلكتروني: [info@hole-in-one.com]</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
+    
+       

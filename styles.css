@@ -1,0 +1,200 @@
+/* إعدادات عامة */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    direction: rtl; /* لجعل النصوص من اليمين لليسار */
+    background-color:antiquewhite;
+}
+
+/* تنسيق الرأس */
+header {
+    background-color: #27AE60;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+/* تنسيق المحتوى الرئيسي */
+main {
+    padding: 20px;
+}
+
+/* تنسيق الأقسام */
+.facility, .package {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.facility h2, .package h2 {
+    color: #333;
+}
+
+
+/* تنسيق الصور */
+.images {
+    display: flex; /* استخدام flexbox لجعل الصور متجاورة */
+    justify-content: space-between; /* توزيع المساحة بين الصور */
+    margin-bottom: 10px;
+}
+
+.images img {
+    width: 48%; /* عرض كل صورة 48% من عرض الحاوية */
+    border-radius: 15px; /* جعل الحواف مشطوفة */
+}
+
+/* تنسيق الأزرار */
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px; /* إضافة مسافة أعلى الزر */
+}
+
+#showVideoButton {
+    margin-bottom: 20px; /* إضافة مسافة أسفل زر تشغيل الفيديو */
+}
+
+button:hover {
+    background-color: #45a049; /* تغيير لون الزر عند التمرير */
+}
+
+/* تنسيق الفوتر */
+footer {
+    background-color: #F4D03F;
+    color: rgb(14, 13, 13);
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* تنسيق نموذج الاتصال */
+form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+form button {
+    width: 100%; /* جعل الزر يأخذ عرض النموذج بالكامل */
+}
+
+/* تنسيق قسم الفيديو */
+.video-section {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+    text-align: center; /* توسيط المحتوى */
+}
+
+.sele{
+  
+    height: 25px;
+    width: 200px;
+}
+option{
+    font-size: medium;
+    font-weight: bold;
+
+}
+p{
+    font-size: medium;
+    
+}
+a{
+    font-size: medium;
+    font-weight: bold;
+}
+.about{
+    width: 600px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+/* تحسين تصميم نموذج الاتصال */
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: auto;
+}
+
+label {
+    margin-top: 10px;
+}
+
+input, textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #4CAF50; /* لون الزر */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049; /* لون الزر عند التمرير */
+}
+
+/* تحسين تصميم الحزم */
+.image-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.image-gallery img {
+    width: 48%; /* عرض الصور */
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+.log{
+    width: 150px;
+    height:100px ;
+    border-radius: 10px;
+}
